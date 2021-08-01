@@ -272,7 +272,7 @@ def split_pkg_path(pkg_path):
 
     component = 'main'
 
-    dist = match_package.group('dist') or match_path.group('dist')
+    dist = match_package.group('dist') or (match_path and match_path.group('dist'))
     if dist is None:
         dist = 'all'
     arch = match_package.group('arch')
